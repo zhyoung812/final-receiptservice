@@ -14,15 +14,15 @@ public class Receipt {
                 "<br/><b>Customer Id:</b> " + order.customerId() +
                 "<br/><b>Order Id:</b> " + order.id() +
                 "<br/><b>Sandwich:</b> " +
-                "<br/>Ham: " + order.hamCount() +
-                "<br/>Turkey: " + order.turkeyCount() +
-                "<br/>Avocado: " + order.avocadoCount() +
-                "<br/>" + order.bread() +
-                "<br/>" + order.cheese() +
-                "<br/>" + order.vegetables() +
+                "<br/>&emsp;Ham: " + order.hamCount() +
+                "<br/>&emsp;Turkey: " + order.turkeyCount() +
+                "<br/>&emsp;Avocado: " + order.avocadoCount() +
+                "<br/>&emsp;" + order.bread() +
+                "<br/>&emsp;" + order.cheese() +
+                "<br/>&emsp;" + order.vegetables() +
                 "<br/><b>Sides:</b> ";
         for (Side s : order.sides()) {
-            receipt += "<br/>" + s.name() + " " + s.price();
+            receipt += "<br/>&emsp;" + s.name() + " " + s.price();
         }
         receipt += "<br/><b>Total:</b> " + order.total();
         return receipt;
