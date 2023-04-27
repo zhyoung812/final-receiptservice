@@ -11,9 +11,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class ReceiptController {
     private final WebClient orderService;
     public ReceiptController(WebClient.Builder webClientBuilder) {
-        this.orderService = webClientBuilder.baseUrl("http://localhost:8090").build();
+        this.orderService = webClientBuilder.baseUrl("https://final-orderservice-production.up.railway.app").build();
     }
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://final-frontend-eta.vercel.app/")
     @GetMapping("/{id}")
     public Order findByOrderId(@PathVariable int id) {
         Order order =  orderService.get().uri("/orders/{id}", id)
