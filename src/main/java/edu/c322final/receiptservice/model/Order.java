@@ -4,6 +4,11 @@ import java.util.List;
 
 public record Order(int id,
                     int customerId,
-                    ConcreteSandwich sandwich,
+                    int turkeyCount,
+                    int hamCount,
+                    int avocadoCount,
                     double total,
+                    String vegetables,
+                    String cheese,
+                    String bread,
                     List<Side> sides) {}

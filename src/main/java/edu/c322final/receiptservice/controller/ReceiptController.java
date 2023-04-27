@@ -19,7 +19,7 @@ public class ReceiptController {
         .retrieve()
         .bodyToMono(Order.class).block();
         assert order != null;
-        Receipt receipt = new Receipt(order.id(), order.sandwich(), order.sides(), order.total());
+        Receipt receipt = new Receipt(order);
         return receipt.getFormattedReceipt();
     }
 }
