@@ -10,21 +10,21 @@ public class Receipt {
     }
     public String setFormattedReceipt(Order order) {
         String receipt = "Thank you for ordering from our sandwich shop." +
-                "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" +
-                "\nCustomer Id: " + order.customerId() +
-                "\nOrder Id: " + order.id() +
-                "\nSandwich: " +
-                "\n\tHam: " + order.hamCount() +
-                "\n\tTurkey: " + order.turkeyCount() +
-                "\n\tAvocado: " + order.avocadoCount() +
-                "\n\t" + order.bread() +
-                "\n\t" + order.cheese() +
-                "\n\t" + order.vegetables() +
-                "\nSides: ";
+                "<br/>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" +
+                "<br/><b>Customer Id:</b> " + order.customerId() +
+                "<br/><b>Order Id:</b> " + order.id() +
+                "<br/><b>Sandwich:</b> " +
+                "<br/>Ham: " + order.hamCount() +
+                "<br/>Turkey: " + order.turkeyCount() +
+                "<br/>Avocado: " + order.avocadoCount() +
+                "<br/>" + order.bread() +
+                "<br/>" + order.cheese() +
+                "<br/>" + order.vegetables() +
+                "<br/><b>Sides:</b> ";
         for (Side s : order.sides()) {
-            receipt += "\n\t" + s.name() + " " + s.price();
+            receipt += "<br/>" + s.name() + " " + s.price();
         }
-        receipt += "\nTotal: " + order.total();
+        receipt += "<br/><b>Total:</b> " + order.total();
         return receipt;
     }
     public String getFormattedReceipt() {
