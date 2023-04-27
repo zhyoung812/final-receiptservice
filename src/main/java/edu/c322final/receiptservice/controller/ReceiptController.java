@@ -15,7 +15,7 @@ public class ReceiptController {
     public ReceiptController(WebClient.Builder webClientBuilder) {
         this.orderService = webClientBuilder.baseUrl("http://localhost:8090").build();
     }
-    @GetMapping("/{orderId}")
+    @GetMapping("/{id}")
     public String findByOrderId(@PathVariable int id) {
         Order order =  orderService.get().uri("/orders/{id}", id)
         .retrieve()
