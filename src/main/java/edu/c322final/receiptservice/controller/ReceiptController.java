@@ -13,7 +13,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class ReceiptController {
     private final WebClient orderService;
     public ReceiptController(WebClient.Builder webClientBuilder) {
-        this.orderService = webClientBuilder.baseUrl("http://localhost:8091").build();
+        this.orderService = webClientBuilder.baseUrl("http://localhost:8090").build();
     }
     @GetMapping("/{orderId}")
     public String findByOrderId(@PathVariable int id) {
