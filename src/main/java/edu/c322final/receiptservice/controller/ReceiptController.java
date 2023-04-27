@@ -15,13 +15,12 @@ public class ReceiptController {
     }
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/{id}")
-    public String findByOrderId(@PathVariable int id) {
+    public ReceiptResponse findByOrderId(@PathVariable int id) {
         Order order =  orderService.get().uri("/orders/{id}", id)
         .retrieve()
         .bodyToMono(Order.class).block();
         assert order != null;
         Receipt receipt = new Receipt(order);
-        ReceiptResponse receiptResponse = new ReceiptResponse(receipt.getFormattedReceipt());
-        return receiptResponse.getResponse();
+        return new ReceiptResponse(receipt.getFormattedReceipt());
     }
 }
