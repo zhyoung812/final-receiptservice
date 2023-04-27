@@ -18,7 +18,7 @@ public class Receipt {
                 "\n\tTurkey: " + order.turkeyCount() +
                 "\n\tAvocado: " + order.avocadoCount() +
                 "\n\t" + order.bread() +
-                "\n\t" + order.cheese()+
+                "\n\t" + order.cheese() +
                 "\n\t" + order.vegetables() +
                 "\nSides: ";
         for (Side s : order.sides()) {
